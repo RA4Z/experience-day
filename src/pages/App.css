@@ -1,0 +1,77 @@
+.App-header {
+  background-color: #072446;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.App-link {
+  color: #61dafb;
+}
+.image-header {
+  max-width: 100%;
+}
+
+.bloco {
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  color: black;
+}
+.bloco-left {
+  max-width: 40%;
+  text-wrap: wrap;
+  text-align: center;
+}
+.bloco-right {
+  align-self: flex-end;
+  max-width: 50%;
+}
+.caixa-cronograma {
+  background-color: white;
+  color: #7E7E7E;
+  margin: 10px;
+  border-radius: 30px;
+  width: 90%;
+  height: auto;
+  padding: 50px;
+  padding-top: 0px;
+}
+.horarios {
+  display: flex;
+  justify-content: space-around;
+}
+.horario {
+  font-weight: bold;
+  max-width: 40%;
+  text-wrap: wrap;
+}
+p {
+  margin: 2px;
+}
+input {
+  width: 90%;
+  padding: 12px 20px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+button {
+  margin-bottom: 60px;
+  background-color: #2174BD;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: 0.5s;
+}
+button:hover {
+  background-color: #0D273E; /* Green */
+}
