@@ -14,8 +14,8 @@ function App() {
   async function salvar() {
     if (item.email !== '') {
       salvarPost({ ...item })
+      window.scrollTo(0, 0);
       alert(item.email + ' registrado na lista de presentes com sucesso!')
-      //window.location.reload()
     } else {
       alert('O E-mail não pode estar vazio!')
     }
