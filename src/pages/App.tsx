@@ -15,10 +15,11 @@ function App() {
     if (item.email !== '') {
       salvarPost({ ...item })
       alert(item.email + ' registrado na lista de presentes com sucesso!')
-      window.location.reload()
+      //window.location.reload()
     } else {
       alert('O E-mail não pode estar vazio!')
     }
+    setItem({email:'',id:1})
   }
 
   return (
