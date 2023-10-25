@@ -19,7 +19,7 @@ function App() {
     } else {
       alert('O E-mail não pode estar vazio!')
     }
-    setItem({email:'',id:1})
+    setItem({ email: '', id: 1 })
   }
 
   return (
@@ -28,15 +28,11 @@ function App() {
         <img src={logoPCP} className="App-logo" alt="logo" />
         <img src={backgroundWeg} className="image-header" alt="cabeçalho" />
 
-        <div className='bloco'>
-          <div className='bloco-left'>
-            <h2>BEM VINDO!</h2>
-            <h3 style={{ color: "#072446" }}>Favor registrar sua participação abaixo, confirmando sua presença.</h3>
-          </div>
-          <div className='bloco-right'>
-            <h4>Realizar registro com seu email weg.(@weg.net)</h4>
-          </div>
-        </div>
+        <h1 style={{marginBottom:'0'}}>BEM VINDO!</h1>
+        <h2 style={{marginTop:'0'}}>Favor registrar seu e-mail WEG para confirmar sua presença.</h2>
+
+        <input value={item.email} onChange={event => setItem({ email: event.target.value, id: 1 })} />
+        <button onClick={salvar}>Confirmar</button>
 
         <h2>Cronograma Geral do Evento</h2>
 
@@ -75,15 +71,11 @@ function App() {
         </div>
 
         <h2>Local e Transmissão</h2>
-        <div className='caixa-cronograma' style={{ textAlign: 'center', paddingBottom: '0' }}>
+        <div className='caixa-cronograma' style={{ textAlign: 'center', paddingBottom: '0', marginBottom:'60px' }}>
           <h2>
-            O evento acontecerá no autório do DG e contará com transmissão ao vivo via Microsoft Teams.
+            O evento será transmitido via Microsoft Teams.
           </h2>
         </div>
-        <h2>Confirme sua Presença! (insira seu E-mail WEG)</h2>
-
-        <input value={item.email} onChange={event => setItem({ email: event.target.value, id: 1 })} />
-        <button onClick={salvar}>Confirmar</button>
 
       </header>
     </div>
