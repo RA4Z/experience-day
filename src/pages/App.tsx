@@ -1,8 +1,26 @@
+import { useState } from 'react'
 import logoPCP from '../images/Logo_evento.png'
 import backgroundWeg from '../images/background_weg.png'
 import './App.css';
+import { salvarPost } from '../services/firestore';
+
 
 function App() {
+  const [item, setItem] = useState({
+    email: '',
+    id: 1
+  });
+
+  async function salvar() {
+    if (item.email !== '') {
+      salvarPost({ ...item })
+      alert(item.email + ' registrado na lista de presentes com sucesso!')
+      window.location.reload()
+    } else {
+      alert('O E-mail não pode estar vazio!')
+    }
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -63,9 +81,9 @@ function App() {
         </div>
         <h2>Confirme sua Presença! (insira seu E-mail WEG)</h2>
 
-        <input />
-        <button>Confirmar</button>
-        
+        <input value={item.email} onChange={event => setItem({ email: event.target.value, id: 1 })} />
+        <button onClick={salvar}>Confirmar</button>
+
       </header>
     </div>
   );
