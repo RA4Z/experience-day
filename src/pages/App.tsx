@@ -7,8 +7,7 @@ import { salvarPost } from '../services/firestore';
 
 function App() {
   const [item, setItem] = useState({
-    email: '',
-    id: 1
+    email: ''
   });
 
   async function salvar() {
@@ -19,7 +18,7 @@ function App() {
     } else {
       alert('O E-mail não pode estar vazio!')
     }
-    setItem({ email: '', id: 1 })
+    setItem({ email: '' })
   }
 
   return (
@@ -28,10 +27,10 @@ function App() {
         <img src={logoPCP} className="App-logo" alt="logo" />
         <img src={backgroundWeg} className="image-header" alt="cabeçalho" />
 
-        <h1 style={{marginBottom:'0'}}>BEM VINDO!</h1>
-        <h2 style={{marginTop:'0'}}>Favor registrar seu e-mail WEG para confirmar sua presença.</h2>
+        <h1 style={{ marginBottom: '0' }}>BEM VINDO!</h1>
+        <h2 style={{ marginTop: '0' }}>Favor registrar seu e-mail WEG para confirmar sua presença.</h2>
 
-        <input value={item.email} onChange={event => setItem({ email: event.target.value, id: 1 })} />
+        <input value={item.email} onChange={event => setItem({ email: event.target.value })} />
         <button onClick={salvar}>Confirmar</button>
 
         <h2>Cronograma Geral do Evento</h2>
@@ -71,7 +70,7 @@ function App() {
         </div>
 
         <h2>Local e Transmissão</h2>
-        <div className='caixa-cronograma' style={{ textAlign: 'center', paddingBottom: '0', marginBottom:'60px' }}>
+        <div className='caixa-cronograma' style={{ textAlign: 'center', paddingBottom: '0', marginBottom: '60px' }}>
           <h2>
             O evento será transmitido via Microsoft Teams.
           </h2>
