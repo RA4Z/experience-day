@@ -10,15 +10,24 @@ function App() {
     email: ''
   });
 
+  const validateEmail = (emailAddress:string) => {
+    let validate = /\S+@\S+\.\S+/;
+    return validate.test(emailAddress)
+  }
+
   async function salvar() {
     if (item.email !== '') {
-      salvarPost({ ...item })
-      window.scrollTo(0, 0);
-      alert(item.email + ' registrado na lista de presentes com sucesso!')
+      if(validateEmail(item.email)) {
+        salvarPost({ ...item })
+        window.scrollTo(0, 0);
+        alert(item.email + ' registrado na lista de presentes com sucesso!')
+        setItem({ email: '' })
+      } else {
+        alert(item.email + ' não é um endereço de E-mail válido!')
+      }
     } else {
       alert('O E-mail não pode estar vazio!')
     }
-    setItem({ email: '' })
   }
 
   return (
