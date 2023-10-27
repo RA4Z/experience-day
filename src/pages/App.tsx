@@ -10,14 +10,14 @@ function App() {
     email: ''
   });
 
-  const validateEmail = (emailAddress:string) => {
+  const validateEmail = (emailAddress: string) => {
     let validate = /\S+@\S+\.\S+/;
     return validate.test(emailAddress)
   }
 
   async function salvar() {
     if (item.email !== '') {
-      if(validateEmail(item.email)) {
+      if (validateEmail(item.email)) {
         salvarPost({ ...item })
         window.scrollTo(0, 0);
         alert(item.email + ' registrado na lista de presentes com sucesso!')
@@ -84,7 +84,7 @@ function App() {
             O evento será transmitido via Microsoft Teams.
           </h2>
         </div>
-
+        <div className='rodape'>Prototipado por Rogerio Henrique de Oliveira Schneider, Desenvolvido por Robert Aron Zimmermann</div>
       </header>
     </div>
   );
