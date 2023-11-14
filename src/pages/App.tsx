@@ -85,7 +85,8 @@ function App() {
         <h2>Local e Transmissão</h2>
         <div className='caixa-cronograma' style={{ textAlign: 'center', paddingBottom: '0', marginBottom: '60px' }}>
           <h2>
-            O evento será transmitido via Microsoft Teams.
+            O evento será transmitido via 
+            <a href='https://teams.microsoft.com/l/meetup-join/19%3ameeting_M2JiOWUxNTEtMWE1MS00YWZkLTk0YTItMmMwZDA1ZmU4MmIx%40thread.v2/0?context=%7b%22Tid%22%3a%22886666a6-a8d2-4604-a002-95b622cb7e18%22%2c%22Oid%22%3a%220a266f1d-de89-44f8-82fd-351179f321d4%22%7d'> Microsoft Teams.</a>
           </h2>
         </div>
         <div className='rodape'>Prototipado por Rogerio Henrique de Oliveira Schneider, Desenvolvido por Robert Aron Zimmermann</div>

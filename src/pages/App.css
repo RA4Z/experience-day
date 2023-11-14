@@ -126,3 +126,8 @@ button:hover {
   text-align: center;
   font-weight: bold;
 }
+
+a {
+  text-decoration: none;
+  color: #072446;
+}
