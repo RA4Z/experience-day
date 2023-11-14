@@ -8,9 +8,11 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
 .App-link {
   color: #61dafb;
 }
+
 .image-header {
   max-width: 100%;
 }
@@ -22,15 +24,18 @@
   width: 100%;
   color: black;
 }
+
 .bloco-left {
   max-width: 40%;
   text-wrap: wrap;
   text-align: center;
 }
+
 .bloco-right {
   align-self: flex-end;
   max-width: 50%;
 }
+
 .caixa-cronograma {
   background-color: white;
   color: #7E7E7E;
@@ -41,24 +46,61 @@
   padding: 50px;
   padding-top: 0px;
 }
+
 .horarios {
   display: flex;
   justify-content: space-around;
 }
+
 .horario {
   font-weight: bold;
   max-width: 40%;
   text-wrap: wrap;
 }
+
 p {
+  cursor: pointer;
   margin: 2px;
+  transition: .5s;
+
+  &:hover {
+    color: #072446;
+  }
 }
+
+[aria-label] {
+  position: relative;
+}
+
+[aria-label]::after {
+  content: attr(aria-label);
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0px;
+  z-index: 5000;
+  pointer-events: none;
+  text-align: center;
+  border-radius: 20px;
+  border: solid white 1px;
+  padding: 8px 10px;
+  text-decoration: none;
+  font-size: .9em;
+  color: #fff;
+  background-color: #072446;
+}
+
+[aria-label]:hover::after {
+  display: block;
+}
+
 input {
   width: 90%;
   padding: 12px 20px;
   margin-bottom: 15px;
   box-sizing: border-box;
 }
+
 button {
   background-color: #2174BD;
   border: none;
@@ -71,9 +113,12 @@ button {
   font-size: 16px;
   transition: 0.5s;
 }
+
 button:hover {
-  background-color: #0D273E; /* Green */
+  background-color: #0D273E;
+  /* Green */
 }
+
 .rodape {
   background-color: #7E7E7E;
   height: auto;

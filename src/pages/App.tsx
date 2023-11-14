@@ -31,11 +31,11 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App ">
       <header className="App-header">
         <img src={logoPCP} className="App-logo" alt="logo" />
         <img src={backgroundWeg} className="image-header" alt="cabeçalho" />
-
+    
         <h1 style={{ marginBottom: '0' }}>BEM VINDO!</h1>
         <h2 style={{ marginTop: '0' }}>Favor registrar seu e-mail WEG para confirmar sua presença.</h2>
 
@@ -48,15 +48,16 @@ function App() {
           <h3 style={{ color: 'black' }}>22 de Novembro - Manhã</h3>
           <div className='horarios'>
             <div className='horario'>
-              <p>08:30    Abertura</p>
-              <p>08:40    Unidade 01</p>
-              <p>09:20    Unidade 02</p>
+              <p aria-label='Abertura do evento'>08:30:00    Abertura</p>
+              <p aria-label='Agendamento de Inspeções após pré teste'>08:40:00    WEN JGS</p>
+              <p aria-label='Reduzir o tempo de tratativa das mensagens de exceção'>09:00:00    WEN SZO</p>
+              <p aria-label='F-WM (Factory - Warehouse Management)'>09:20:00    WMO</p>
             </div>
             <div className='horario'>
-              <p>10:00    Coffe Break</p>
-              <p>10:15    Unidade 03</p>
-              <p>10:55    Palestra 01</p>
-              <p>11:35    Almoço</p>
+              <p aria-label='ATO (Assembly to Order)'>09:40:00    WMO</p>
+              <p aria-label='Coffee Break'>10:00:00    COFFEE BREAK</p>
+              <p aria-label='Planejamento e Programação no Departamento de Tintas Pó'>10:15:00    WTI</p>
+              <p aria-label='Evolução do PCP Dentro da WEG'>10:55:00    Palestra 01</p>
             </div>
           </div>
         </div>
@@ -65,15 +66,18 @@ function App() {
           <h3 style={{ color: 'black' }}>22 de Novembro - Tarde</h3>
           <div className='horarios'>
             <div className='horario'>
-              <p>08:30    Abertura</p>
-              <p>08:40    Unidade 01</p>
-              <p>09:20    Unidade 02</p>
+              <p aria-label='Acompanhamento e execução das atividades do bloco K'>13:00:00    WDS</p>
+              <p aria-label='Otimização nos Projetos de Embalagens'>13:20:00    WMO</p>
+              <p aria-label='Melhorias nos Processos de Partes e Peças'>13:40:00    WMO</p>
+              <p aria-label='Indicadores Gerenciais de Drives e Controls'>14:00:00    WAU</p>
+              <p aria-label='Dashboard de Controle da Previsão de Vendas'>14:20:00    WAU</p>
             </div>
             <div className='horario'>
-              <p>10:00    Coffe Break</p>
-              <p>10:15    Unidade 03</p>
-              <p>10:55    Palestra 01</p>
-              <p>11:35    Almoço</p>
+              <p aria-label='Coffee Break'>14:40:00    COFFEE BREAK</p>
+              <p aria-label='Processo S&OP WTD'>14:55:00    WTD</p>
+              <p aria-label='Aplicação do APS na Programação de Transformadores'>15:15:00    WTD</p>
+              <p aria-label='Autoconhecimento e Trabalho em Equipe'>15:15:00    Palestra 02</p>
+              <p aria-label='Encerramento do evento'>16:40:00    Encerramento</p>
             </div>
           </div>
         </div>
