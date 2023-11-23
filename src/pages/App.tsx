@@ -16,15 +16,19 @@ function App() {
   })
 
   async function salvar() {
-    salvarPost({ ...dados })
-    window.scrollTo(0, 0);
-    alert('Questionário respondido com sucesso! Muito obrigado!')
-    setDados({
-      conhecimento: false,
-      implantados: false,
-      nivel_satisfeito: 0,
-      sugerir: ''
-    })
+    if (dados.nivel_satisfeito > 0) {
+      salvarPost({ ...dados })
+      window.scrollTo(0, 0);
+      alert('Questionário respondido com sucesso! Muito obrigado!')
+      setDados({
+        conhecimento: false,
+        implantados: false,
+        nivel_satisfeito: 0,
+        sugerir: ''
+      })
+    } else {
+      alert('Por favor, dê uma nota de 1 a 5 ao evento!')
+    }
   }
 
   const estrelas = [1, 2, 3, 4, 5]
