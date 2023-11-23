@@ -23,90 +23,6 @@
   max-width: 100%;
 }
 
-.bloco {
-  background-color: white;
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  color: black;
-}
-
-.bloco-left {
-  max-width: 40%;
-  text-wrap: wrap;
-  text-align: center;
-}
-
-.bloco-right {
-  align-self: flex-end;
-  max-width: 50%;
-}
-
-.caixa-cronograma {
-  background-color: white;
-  color: #7E7E7E;
-  margin: 10px;
-  border-radius: 30px;
-  width: 90%;
-  height: auto;
-  padding: 50px;
-  padding-top: 0px;
-}
-
-.horarios {
-  display: flex;
-  justify-content: space-around;
-}
-
-.horario {
-  font-weight: bold;
-  max-width: 40%;
-  text-wrap: wrap;
-}
-
-p {
-  cursor: pointer;
-  margin: 2px;
-  transition: .5s;
-
-  &:hover {
-    color: #072446;
-  }
-}
-
-[aria-label] {
-  position: relative;
-}
-
-[aria-label]::after {
-  content: attr(aria-label);
-  display: none;
-  position: absolute;
-  top: 110%;
-  left: 0px;
-  z-index: 5000;
-  pointer-events: none;
-  text-align: center;
-  border-radius: 20px;
-  border: solid white 1px;
-  padding: 8px 10px;
-  text-decoration: none;
-  font-size: .9em;
-  color: #fff;
-  background-color: #072446;
-}
-
-[aria-label]:hover::after {
-  display: block;
-}
-
-input {
-  width: 90%;
-  padding: 12px 20px;
-  margin-bottom: 15px;
-  box-sizing: border-box;
-}
-
 button {
   background-color: #2174BD;
   border: none;
@@ -122,7 +38,6 @@ button {
 
 button:hover {
   background-color: #0D273E;
-  /* Green */
 }
 
 .rodape {
@@ -133,11 +48,6 @@ button:hover {
   font-weight: bold;
 }
 
-a {
-  text-decoration: none;
-  color: #072446;
-}
-
 .form-container {
   background-color: #fff;
   padding: 75px;
@@ -146,6 +56,7 @@ a {
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 50px;
   gap: 20px;
 }
 
