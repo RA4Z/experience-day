@@ -2,11 +2,9 @@ import { useState } from 'react'
 import logoPCP from '../images/Logo_evento.png'
 import backgroundWeg from '../images/background_weg.png'
 import { TextField, Checkbox, FormControlLabel } from '@mui/material';
-import estrela_dourada from '../images/estrela_dourada.svg'
-import estrela_cinza from '../images/estrela_cinza.svg'
 import './App.css';
 import { salvarPost } from '../services/firestore';
-
+import Star from '../components/star';
 
 function App() {
   const [tempHover, setTempHover] = useState(0)
@@ -29,6 +27,8 @@ function App() {
     })
   }
 
+  const estrelas = [1, 2, 3, 4, 5]
+
   return (
     <div className="App ">
       <header className="App-header">
@@ -41,35 +41,18 @@ function App() {
 
           <p style={{ color: 'black', textAlign: 'center', fontSize: 20 }}>Qual foi seu nível de satisfação geral com o evento?</p>
           <div className='star-rate'>
-            <img src={dados.nivel_satisfeito >= 1 || tempHover >= 1 ? estrela_dourada : estrela_cinza}
-              onMouseOver={() => setTempHover(1)}
-              onMouseOut={() => setTempHover(0)}
-              alt='Estrela Cinza' className='estrela'
-              onClick={() => setDados({ ...dados, nivel_satisfeito: 1 })} />
-
-            <img src={dados.nivel_satisfeito >= 2 || tempHover >= 2 ? estrela_dourada : estrela_cinza}
-              onMouseOver={() => setTempHover(2)}
-              onMouseOut={() => setTempHover(0)}
-              alt='Estrela Cinza' className='estrela'
-              onClick={() => setDados({ ...dados, nivel_satisfeito: 2 })} />
-
-            <img src={dados.nivel_satisfeito >= 3 || tempHover >= 3 ? estrela_dourada : estrela_cinza}
-              onMouseOver={() => setTempHover(3)}
-              onMouseOut={() => setTempHover(0)}
-              alt='Estrela Cinza' className='estrela'
-              onClick={() => setDados({ ...dados, nivel_satisfeito: 3 })} />
-
-            <img src={dados.nivel_satisfeito >= 4 || tempHover >= 4 ? estrela_dourada : estrela_cinza}
-              onMouseOver={() => setTempHover(4)}
-              onMouseOut={() => setTempHover(0)}
-              alt='Estrela Cinza' className='estrela'
-              onClick={() => setDados({ ...dados, nivel_satisfeito: 4 })} />
-
-            <img src={dados.nivel_satisfeito >= 5 || tempHover >= 5 ? estrela_dourada : estrela_cinza}
-              onMouseOver={() => setTempHover(5)}
-              onMouseOut={() => setTempHover(0)}
-              alt='Estrela Cinza' className='estrela'
-              onClick={() => setDados({ ...dados, nivel_satisfeito: 5 })} />
+            {estrelas.map(estrela => (
+              <Star
+                key={estrela}
+                index={estrela}
+                dados={dados}
+                nivel_satisfeito={dados.nivel_satisfeito}
+                setDados={setDados}
+                tempHover={tempHover}
+                setTempHover={setTempHover}
+                onClick={() => setDados({ ...dados, nivel_satisfeito: 5 })}
+              />
+            ))}
           </div>
 
           <FormControlLabel control={<Checkbox checked={dados.conhecimento} onChange={e => setDados({ ...dados, conhecimento: e.target.checked })} />}
