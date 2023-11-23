@@ -34,8 +34,7 @@ function App() {
         <img src={logoPCP} className="App-logo" alt="logo" />
         <img src={backgroundWeg} className="image-header" alt="cabeçalho" />
 
-        <h1 style={{ marginBottom: '0' }}>BEM VINDO!</h1>
-        <h2 style={{ marginTop: '0', textAlign: 'center' }}>Por favor responda ao nosso questionário de satisfação com relação ao evento de integração dos PCPs.</h2>
+        <h2 style={{ marginTop: '0', textAlign: 'center', paddingTop:20 }}>Pesquisa de Satisfação!</h2>
 
         <div className='form-container'>
 

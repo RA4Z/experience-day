@@ -155,7 +155,7 @@ a {
 
 .check {
   color: black;
-  max-width: calc(100px + 50vmin);
+  min-width: calc(100px + 50vmin);
 }
 
 .estrela {
