@@ -1,33 +1,31 @@
 import { useState } from 'react'
 import logoPCP from '../images/Logo_evento.png'
 import backgroundWeg from '../images/background_weg.png'
+import { TextField, Checkbox, FormControlLabel } from '@mui/material';
+import estrela_dourada from '../images/estrela_dourada.svg'
+import estrela_cinza from '../images/estrela_cinza.svg'
 import './App.css';
 import { salvarPost } from '../services/firestore';
 
 
 function App() {
-  const [item, setItem] = useState({
-    email: ''
-  });
-
-  const validateEmail = (emailAddress: string) => {
-    let validate = /\S+@\S+\.\S+/;
-    return validate.test(emailAddress)
-  }
+  const [dados, setDados] = useState({
+    conhecimento: false,
+    implantados: false,
+    nivel_satisfeito: 0,
+    sugerir: ''
+  })
 
   async function salvar() {
-    if (item.email !== '') {
-      if (validateEmail(item.email)) {
-        salvarPost({ ...item })
-        window.scrollTo(0, 0);
-        alert(item.email + ' registrado na lista de presentes com sucesso!')
-        setItem({ email: '' })
-      } else {
-        alert(item.email + ' não é um endereço de E-mail válido!')
-      }
-    } else {
-      alert('O E-mail não pode estar vazio!')
-    }
+    salvarPost({ ...dados })
+    window.scrollTo(0, 0);
+    alert('Questionário respondido com sucesso! Muito obrigado!')
+    setDados({
+      conhecimento: false,
+      implantados: false,
+      nivel_satisfeito: 0,
+      sugerir: ''
+    })
   }
 
   return (
@@ -35,12 +33,58 @@ function App() {
       <header className="App-header">
         <img src={logoPCP} className="App-logo" alt="logo" />
         <img src={backgroundWeg} className="image-header" alt="cabeçalho" />
-    
-        <h1 style={{ marginBottom: '0' }}>BEM VINDO!</h1>
-        <h2 style={{ marginTop: '0' }}>Favor registrar seu e-mail WEG para confirmar sua presença.</h2>
 
-        <input value={item.email} onChange={event => setItem({ email: event.target.value })} />
-        <button onClick={salvar}>Confirmar</button>
+        <h1 style={{ marginBottom: '0' }}>BEM VINDO!</h1>
+        <h2 style={{ marginTop: '0', textAlign: 'center' }}>Por favor responda ao nosso questionário de satisfação com relação ao evento de integração dos PCPs.</h2>
+
+        <div className='form-container'>
+
+          <p style={{ color: 'black', textAlign: 'center', fontSize: 20 }}>Qual foi seu nível de satisfação geral com o evento?</p>
+          <div className='star-rate'>
+            <img src={dados.nivel_satisfeito >= 1 ? estrela_dourada : estrela_cinza}
+              alt='Estrela Cinza' className='estrela'
+              onClick={() => setDados({ ...dados, nivel_satisfeito: 1 })} />
+
+            <img src={dados.nivel_satisfeito >= 2 ? estrela_dourada : estrela_cinza}
+              alt='Estrela Cinza' className='estrela'
+              onClick={() => setDados({ ...dados, nivel_satisfeito: 2 })} />
+
+            <img src={dados.nivel_satisfeito >= 3 ? estrela_dourada : estrela_cinza}
+              alt='Estrela Cinza' className='estrela'
+              onClick={() => setDados({ ...dados, nivel_satisfeito: 3 })} />
+
+            <img src={dados.nivel_satisfeito >= 4 ? estrela_dourada : estrela_cinza}
+              alt='Estrela Cinza' className='estrela'
+              onClick={() => setDados({ ...dados, nivel_satisfeito: 4 })} />
+
+            <img src={dados.nivel_satisfeito >= 5 ? estrela_dourada : estrela_cinza}
+              alt='Estrela Cinza' className='estrela'
+              onClick={() => setDados({ ...dados, nivel_satisfeito: 5 })} />
+          </div>
+
+          <FormControlLabel control={<Checkbox defaultChecked={dados.conhecimento} onChange={e => setDados({ ...dados, conhecimento: e.target.checked })} />}
+            label="Você aprendeu ou enriqueceu seu conhecimento na área de PCP?"
+            className='check' />
+
+          <FormControlLabel control={<Checkbox defaultChecked={dados.implantados} onChange={e => setDados({ ...dados, implantados: e.target.checked })} />}
+            label="Você acredita que os cases apresentados podem ser implantados em sua unidade?"
+            className='check' />
+
+          <TextField
+            id="input-sugerir"
+            value={dados.sugerir}
+            onChange={e => setDados({ ...dados, sugerir: e.target.value })}
+            label="Sugestões para o próximo evento"
+            variant="outlined"
+            multiline
+            rows={5}
+            autoComplete="email"
+            className={'input-text'} />
+
+          <button onClick={salvar}>Confirmar</button>
+
+        </div>
+
 
         <h2>Cronograma Geral do Evento</h2>
 
@@ -76,7 +120,7 @@ function App() {
               <p aria-label='Coffee Break'>14:40:00    COFFEE BREAK</p>
               <p aria-label='Processo S&OP WTD'>14:55:00    WTD</p>
               <p aria-label='Aplicação do APS na Programação de Transformadores'>15:15:00    WTD</p>
-              <p aria-label='Autoconhecimento e Trabalho em Equipe'>15:15:00    Palestra 02</p>
+              <p aria-label='Autoconhecimento e Trabalho em Equipe'>15:35:00    Palestra 02</p>
               <p aria-label='Encerramento do evento'>16:40:00    Encerramento</p>
             </div>
           </div>
@@ -85,7 +129,7 @@ function App() {
         <h2>Local e Transmissão</h2>
         <div className='caixa-cronograma' style={{ textAlign: 'center', paddingBottom: '0', marginBottom: '60px' }}>
           <h2>
-            O evento será transmitido via 
+            O evento será transmitido via
             <a href='https://teams.microsoft.com/l/meetup-join/19%3ameeting_M2JiOWUxNTEtMWE1MS00YWZkLTk0YTItMmMwZDA1ZmU4MmIx%40thread.v2/0?context=%7b%22Tid%22%3a%22886666a6-a8d2-4604-a002-95b622cb7e18%22%2c%22Oid%22%3a%220a266f1d-de89-44f8-82fd-351179f321d4%22%7d'> Microsoft Teams.</a>
           </h2>
         </div>

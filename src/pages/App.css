@@ -9,6 +9,12 @@
   color: white;
 }
 
+.App-logo {
+  @media(max-width: 450px) {
+    width: 100%;
+  }
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -130,4 +136,36 @@ button:hover {
 a {
   text-decoration: none;
   color: #072446;
+}
+
+.form-container {
+  background-color: #fff;
+  padding: 75px;
+  max-width: calc(100px + 50vmin);
+  border-radius: 20px;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.input-text {
+  width: calc(100px + 50vmin);
+}
+
+.check {
+  color: black;
+  max-width: calc(100px + 50vmin);
+}
+
+.estrela {
+  height: 30px;
+  cursor: pointer;
+}
+
+.star-rate {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  margin: 5px 0 25px 0;
 }
