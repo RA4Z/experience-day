@@ -61,11 +61,11 @@ function App() {
               onClick={() => setDados({ ...dados, nivel_satisfeito: 5 })} />
           </div>
 
-          <FormControlLabel control={<Checkbox defaultChecked={dados.conhecimento} onChange={e => setDados({ ...dados, conhecimento: e.target.checked })} />}
+          <FormControlLabel control={<Checkbox checked={dados.conhecimento} onChange={e => setDados({ ...dados, conhecimento: e.target.checked })} />}
             label="Você aprendeu ou enriqueceu seu conhecimento na área de PCP?"
             className='check' />
 
-          <FormControlLabel control={<Checkbox defaultChecked={dados.implantados} onChange={e => setDados({ ...dados, implantados: e.target.checked })} />}
+          <FormControlLabel control={<Checkbox checked={dados.implantados} onChange={e => setDados({ ...dados, implantados: e.target.checked })} />}
             label="Você acredita que os cases apresentados podem ser implantados em sua unidade?"
             className='check' />
 
