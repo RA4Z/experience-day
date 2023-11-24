@@ -35,7 +35,7 @@ function Main() {
 
   return (
     <div className="App ">
-      <header className="App-header">
+      <header className="main-container">
         <img src={logoPCP} className="App-logo" alt="logo" />
         <img src={backgroundWeg} className="image-header" alt="cabeçalho" />
 

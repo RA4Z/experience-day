@@ -1,11 +1,35 @@
 .App-header {
-    background-color: #072446;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
+  display: flex;
+  justify-content: center;
+  background-color: #072446;
+  min-height: 100vh;
+  font-size: calc(7px + 2vmin);
+  color: white;
+  flex-direction: row;
+  align-items: start;
+  padding: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #05101d;
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+  max-width: calc(50px + 50vmin);
+  padding: 25px;
+  box-shadow: 5px 5px 7px #3e3e3e;
+}
+
+.estrelas-alinhadas {
+  display: flex;
+  align-self: center;
+  gap: 10px;
+}
+
+p {
+  margin: 5px;
+}
