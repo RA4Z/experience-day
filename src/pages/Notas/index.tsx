@@ -24,7 +24,6 @@ export default function Notas() {
                         value={Number(media)}
                         precision={0.1}
                         size='large'
-                        max={5}
                     />
                 </div>
             </div>
