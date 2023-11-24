@@ -1,6 +1,6 @@
 import estrela_dourada from '../images/estrela_dourada.svg'
 import estrela_cinza from '../images/estrela_cinza.svg'
-import '../pages/App.css'
+import '../pages/Main/Main.css'
 
 interface Props {
     index:number,

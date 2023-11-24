@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import logoPCP from '../images/Logo_evento.png'
-import backgroundWeg from '../images/background_weg.png'
+import logoPCP from '../../images/Logo_evento.png'
+import backgroundWeg from '../../images/background_weg.png'
 import { TextField, Checkbox, FormControlLabel } from '@mui/material';
-import './App.css';
-import { salvarPost } from '../services/firestore';
-import Star from '../components/star';
+import './Main.css';
+import { salvarPost } from '../../services/firestore';
+import Star from '../../components/star';
 
-function App() {
+function Main() {
   const [tempHover, setTempHover] = useState(0)
   const [dados, setDados] = useState({
     conhecimento: false,
@@ -88,4 +88,4 @@ function App() {
   );
 }
 
-export default App;
+export default Main;
